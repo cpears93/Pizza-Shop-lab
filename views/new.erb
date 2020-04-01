@@ -1,0 +1,27 @@
+<form action="/pizzas" method = "POST">
+  <label for="customer">Customer:</label>
+	<select id="customer" name="customer_id">
+		<% for customer in @customers %>
+			<option value="<%= customer.id%>">
+					<%= customer.full_name%>
+			</option>
+		<% end %>
+	</select>
+
+
+   <label for="pizza-select">Select a pizza:</label>
+      <select id="pizza-select" name="topping">
+        <option value="Margherita">Margherita</option>
+        <option value="Calzone">Calzone</option>
+        <option value="Pepperoni">Pepperoni</option>
+        <option value="Fromagio Quattro">Fromagio Quattro</option>
+        <option value="The Bronson">The Bronson</option>
+      </select>
+
+
+   <label for="quantity">Quantity:</label>
+     <input id="quantity" type="number" name="quantity"/>
+
+
+  <input type='submit' value="Order Pizza"/>
+</form>
